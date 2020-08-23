@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd $(dirname $(realpath $0))
+
+wget -q http://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv -O Releve_horaire_urgences_7jours.csv
+
+git commit -m"Captured on `uname -n` with `realpath $0`" Releve_horaire_urgences_7jours.csv
+git push origin dev
